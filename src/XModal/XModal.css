@@ -21,10 +21,6 @@
   border-radius: 10px;
 }
 
-.modal-content.open {
-  display: block;
-}
-
 .form {
   width: 100%;
   display: flex;

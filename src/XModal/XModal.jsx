@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./XModal.css";
 
 const XModal = ({ closeModal }) => {
@@ -51,9 +51,23 @@ const XModal = ({ closeModal }) => {
     closeModal();
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (!e.target.closest(".modal-content")) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [closeModal]);
+
   return (
     <div className="modal">
-      <div className={`modal-content open`}>
+      <div className={`modal-content`}>
         <h2>Fill Details</h2>
         <form onSubmit={handleSubmit} className="form">
           <label htmlFor="username">Username:</label>

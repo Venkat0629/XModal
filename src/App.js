@@ -7,7 +7,6 @@ function App() {
 
   const handleButtonClick = (e) => {
     setShowForm(true);
-    console.log(showForm);
   };
 
   const handleCloseModal = () => {
