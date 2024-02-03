@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <h1>User Details Modal</h1>
       <button onClick={handleButtonClick} className="submit-button">
-        Open form
+        Open Form
       </button>
       {showForm && <XModal closeModal={handleCloseModal} />}
     </div>
